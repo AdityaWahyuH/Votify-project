@@ -192,7 +192,7 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 brand text-white" href="{{ route('home') }}">
-            <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="VOTIFY" width="38" height="38" class="rounded-circle border border-2" style="border-color: rgba(255,255,255,.25)!important;">
+            <img src="{{ asset('images/Logo Votify.png') }}" alt="VOTIFY" width="38" height="38" class="rounded-circle border border-2" style="border-color: rgba(255,255,255,.25)!important;">
             <span>VOTIFY</span>
         </a>
 

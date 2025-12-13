@@ -57,7 +57,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="Logo" width="45" height="45" class="rounded-circle border border-2 border-white me-2">
+                <img src="{{ asset('images/Logo Votify.png') }}" alt="Logo" width="45" height="45" class="rounded-circle border border-2 border-white me-2">
                 <span>VOTIFY</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <!-- Menggunakan Logo Besar di Hero Section juga bagus -->
-                    <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="Voting Illustration" class="img-fluid rounded-circle shadow-lg border border-4 border-warning" style="max-width: 350px;">
+                    <img src="{{ asset('images/Logo Votify.png') }}" alt="Voting Illustration" class="img-fluid rounded-circle shadow-lg border border-4 border-warning" style="max-width: 350px;">
                 </div>
             </div>
         </div>
