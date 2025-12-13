@@ -9,7 +9,7 @@ class Pemilih extends Model
 {
     use HasFactory;
 
-    // Tambahkan baris ini agar Laravel membaca tabel yang benar
+    
     protected $table = 'pemilih';
 
     protected $fillable = [
