@@ -17,8 +17,8 @@
         h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Poppins', sans-serif; }
         
         /* Navbar */
-        .navbar { background-color: var(--primary-color) !important; padding: 1rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        .navbar-brand { font-weight: 700; letter-spacing: 1px; color: white !important; }
+        .navbar { background-color: var(--primary-color) !important; padding: 0.8rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .navbar-brand { font-weight: 700; letter-spacing: 1px; color: white !important; font-size: 1.3rem; }
         .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 500; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { color: var(--accent-color) !important; }
         
@@ -31,44 +31,24 @@
             overflow: hidden;
         }
         .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0; right: 0;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(234,179,8,0.1) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
+            content: ''; position: absolute; bottom: 0; right: 0; width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(234,179,8,0.1) 0%, rgba(0,0,0,0) 70%); border-radius: 50%;
         }
         .btn-vote {
-            background-color: var(--accent-color);
-            color: #000;
-            font-weight: 700;
-            padding: 12px 35px;
-            border-radius: 50px;
-            border: none;
-            box-shadow: 0 4px 14px 0 rgba(234, 179, 8, 0.39);
-            transition: transform 0.2s;
+            background-color: var(--accent-color); color: #000; font-weight: 700; padding: 12px 35px;
+            border-radius: 50px; border: none; box-shadow: 0 4px 14px 0 rgba(234, 179, 8, 0.39); transition: transform 0.2s;
         }
         .btn-vote:hover { transform: translateY(-2px); background-color: #facc15; color: #000; }
 
         /* Cards */
         .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-            border: 1px solid #e2e8f0;
-            height: 100%;
+            background: white; border-radius: 15px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: 0.3s; border: 1px solid #e2e8f0; height: 100%;
         }
         .feature-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: var(--accent-color); }
         .icon-box {
-            width: 60px; height: 60px;
-            background: #eff6ff;
-            color: var(--primary-color);
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 12px;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            width: 60px; height: 60px; background: #eff6ff; color: var(--primary-color);
+            display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; margin-bottom: 20px;
         }
     </style>
 </head>
@@ -76,8 +56,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="bi bi-box-seam-fill text-warning me-2"></i>VOTIFY
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="Logo" width="45" height="45" class="rounded-circle border border-2 border-white me-2">
+                <span>VOTIFY</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -116,7 +97,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/9402/9402347.png" alt="Voting Illustration" class="img-fluid" style="max-width: 400px; filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));">
+                    <!-- Menggunakan Logo Besar di Hero Section juga bagus -->
+                    <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="Voting Illustration" class="img-fluid rounded-circle shadow-lg border border-4 border-warning" style="max-width: 350px;">
                 </div>
             </div>
         </div>
