@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark mb-5 sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="{{ asset('images/Logo-Votify.jpg') }}" alt="Logo" width="40" class="rounded-circle border border-white me-2">
+                <img src="{{ asset('images/Logo Votify.png') }}" alt="Logo" width="40" class="rounded-circle border border-white me-2">
                 <span class="fw-bold">VOTIFY</span>
             </a>
             <div class="navbar-nav ms-auto">
