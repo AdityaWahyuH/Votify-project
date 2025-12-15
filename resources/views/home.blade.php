@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <!-- Menggunakan Logo Besar di Hero Section juga bagus -->
-                    <img src="{{ asset('images/Logo Votify.png') }}" alt="Voting Illustration" class="img-fluid rounded-circle shadow-lg border border-4 border-warning" style="max-width: 350px;">
+                    <img src="{{ asset('images/Logo DPM.png') }}" alt="Voting Illustration" class="img-fluid rounded-circle shadow-lg border border-4 border-warning" style="max-width: 350px;">
                 </div>
             </div>
         </div>
