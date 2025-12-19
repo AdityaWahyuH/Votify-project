@@ -23,7 +23,6 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         }
 
-        /* Topbar */
         .topbar{
             background: linear-gradient(180deg, var(--navy-900), #0b1730);
             color:#fff;
@@ -39,17 +38,13 @@
             margin: 0 auto;
         }
 
-        /* Title */
         .page-title{
             font-family:Poppins,sans-serif;
             font-weight: 900;
             color:#0f172a;
         }
-        .sub{
-            color:#64748b;
-        }
+        .sub{ color:#64748b; }
 
-        /* Candidate Card */
         .candidate-card{
             background:#fff;
             border: 1px solid var(--border);
@@ -104,7 +99,6 @@
             color: #f59e0b;
         }
 
-        /* Selected style */
         .candidate-card.selected{
             outline: 3px solid rgba(245,158,11,.70);
             box-shadow: 0 0 0 6px rgba(245,158,11,.15);
@@ -129,7 +123,6 @@
             transform: scale(1);
         }
 
-        /* Action bar */
         .actionbar{
             position: sticky;
             bottom: 0;
@@ -160,7 +153,6 @@
 @php
     use Illuminate\Support\Str;
 
-    // Normalisasi path foto agar selalu benar (public/images, images/, storage/, url)
     function fotoUrl($foto) {
         if (!$foto) return null;
 
@@ -168,7 +160,6 @@
         if (Str::startsWith($foto, 'images/')) return asset($foto);
         if (Str::startsWith($foto, 'storage/')) return asset($foto);
 
-        // default: nama file saja -> ambil dari public/images/
         return asset('images/'.$foto);
     }
 @endphp
@@ -182,9 +173,17 @@
         </div>
 
         <div class="d-flex align-items-center gap-2">
+            <a href="{{ route('voting.history') }}" class="btn btn-sm btn-light fw-bold">
+                <i class="bi bi-clock-history me-1"></i>History
+            </a>
+
+            <a href="{{ route('home') }}" class="btn btn-sm btn-outline-light fw-bold">
+                <i class="bi bi-house-door me-1"></i>Beranda
+            </a>
+
             <span class="badge rounded-pill text-bg-dark">
                 <i class="bi bi-person-circle me-1"></i>
-                {{ session('nama_pemilih', 'Pemilih') }}
+                {{ $pemilih->nama ?? session('nama_pemilih', 'Pemilih') }}
             </span>
         </div>
     </div>
@@ -198,6 +197,10 @@
 
     <form method="POST" action="{{ route('voting.submit') }}">
         @csrf
+
+        {{-- KIRIM IDENTITAS PEMILIH --}}
+        <input type="hidden" name="nim" value="{{ $pemilih->nim }}">
+        <input type="hidden" name="nama" value="{{ $pemilih->nama }}">
 
         {{-- DPM --}}
         <div class="mb-4">
@@ -214,7 +217,6 @@
 
                                 <div class="photo">
                                     @php $url = fotoUrl($calon->foto); @endphp
-
                                     @if($url)
                                         <img src="{{ $url }}"
                                              alt="{{ $calon->nama }}"
@@ -258,7 +260,6 @@
 
                                 <div class="photo">
                                     @php $url = fotoUrl($calon->foto); @endphp
-
                                     @if($url)
                                         <img src="{{ $url }}"
                                              alt="{{ $calon->nama }}"
@@ -304,7 +305,6 @@
 </main>
 
 <script>
-    // efek selected untuk radio
     const inputs = document.querySelectorAll('.candidate-input');
     inputs.forEach((inp) => {
         inp.addEventListener('change', () => {

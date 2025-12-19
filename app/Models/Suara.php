@@ -18,8 +18,13 @@ class Suara extends Model
     ];
 
     // Relasi ke tabel Calon
-    public function calon()
-    {
-        return $this->belongsTo(Calon::class, 'id_calon');
-    }
+    public function calonDpm()
+{
+    return $this->belongsTo(\App\Models\Calon::class, 'calon_dpm_id');
+}
+
+public function calonBem()
+{
+    return $this->belongsTo(\App\Models\Calon::class, 'calon_bem_id');
+}
 }
